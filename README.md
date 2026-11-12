@@ -1,38 +1,38 @@
-<div align="center">
+# Marc Poliquin
 
-## Computing with light · Agents that keep their promises · A living map of AI
+I build software where AI meets the systems it runs on: a compiler stack for photonic hardware, a runtime that holds AI agents to hard limits, and an open reference on how modern AI works.
 
-</div>
+My background is corporate finance and accounting, and I am based in Miami. I build with AI coding agents. My part is the design, the acceptance criteria, the review, and the evidence that the result works: tests, CI gates, and written records of what was measured and what was only simulated.
 
-I build software at the boundary between AI and the physical systems that run it: compilers for photonic hardware, runtimes that hold AI agents to explicit limits, and an open, sourced knowledge base on how AI works and where it is going.
+## Projects
 
-Every project here follows the same rule: **say only what the evidence supports.** Capabilities are documented with their limits, and speculation is labelled as speculation.
+### [AWEN](https://github.com/marcpoliquin5/awen): compiler and runtime for photonic computing
 
----
+Neural networks spend most of their time multiplying matrices, and programmable photonic circuits can do that with interfering light. AWEN takes a tensor program from PyTorch, JAX or StableHLO and decides what can run on a photonic matrix core, how to tile it, and how to check the result against a CPU reference.
 
-### AWEN: photonic computing platform
+- Rust compiler and runtime, MLIR dialects in C++, and a `torch.compile` backend in Python
+- About 780 tests at the 0.1.0 release, with the commands and counts recorded in the repository
+- Simulator-only so far: no photonic hardware has been used, and the README says so
 
-Neural networks spend most of their time multiplying matrices, and light can do that by interference. AWEN is the software stack for programmable photonic linear algebra.
+Website: [awen-labs](https://github.com/marcpoliquin5/awen-labs) ([live](https://marcpoliquin5.github.io/awen-labs/)), a React and TypeScript site built around one persistent WebGL scene.
 
-| Repository | What it is |
-|---|---|
-| [**awen**](https://github.com/marcpoliquin5/awen) | Experimental compiler and runtime: tensor-to-photonic compilation, MLIR dialects for StableHLO matrix multiplication, calibration-aware tiling and fault remapping, a seeded analog-noise simulator, and a PyTorch `torch.compile` backend. Rust · MLIR · Python |
-| [**awen-labs**](https://github.com/marcpoliquin5/awen-labs) | Interactive platform website. React · TypeScript · Vite |
-| [**awenphotonics.github.io**](https://github.com/marcpoliquin5/awenphotonics.github.io) | Static status site with an evidence policy that blocks unsupported claims ([visit](https://marcpoliquin5.github.io/awenphotonics.github.io/)) |
+### [FINITE](https://github.com/marcpoliquin5/finite-agent-physics): a runtime that holds agent workflows to their limits
 
-### FINITE: agent physics
+Agent frameworks describe what may happen next. FINITE checks whether a workflow can meet its deadline, token and cost budgets, and rate limits before any model is called, refuses work that cannot, replans when conditions change, and turns risky writes into reviewable, crash-safe intents.
 
-> *Agents can reason. FINITE makes them keep promises.*
+- Python runtime with a CLI, an authenticated HTTP API, a 23-tool MCP server, and a Next.js console
+- 1,020 tests, with coverage floors enforced in CI
+- Experimental release candidate, not production software
 
-[**finite-agent-physics**](https://github.com/marcpoliquin5/finite-agent-physics) is an experimental, framework-neutral runtime for AI agent workflows. It compiles deadlines, token and cost ceilings, provider capacity, and side effects into typed contracts, refuses impossible work before dispatch, and turns consequential writes into durable, reviewable intents. Python · TypeScript
+### [Understanding AI](https://github.com/marcpoliquin5/understanding-ai): a sourced map of the field
 
-### Understanding AI
+A growing reference that runs from linear algebra and backpropagation to LLM serving, alignment, and photonic computing. It has more than 65 topic pages and 1,300 references, and each page explains the idea in plain language before the mathematics.
 
-[**understanding-ai**](https://github.com/marcpoliquin5/understanding-ai) is a living, sourced map of artificial intelligence, updated daily. It runs from foundations (linear algebra, probability, optimization) through deep learning, LLMs, systems and alignment to the frontiers: recursion and self-improvement, fractal scaling, nonlinear dynamics, photonic and neuromorphic computing, quantum ML, and world models. Every claim links to a checked reference.
+### Smaller projects
 
-### Other projects
+- [handbook-answerer](https://github.com/marcpoliquin5/handbook-answerer): answers HR policy questions from a live public handbook with a local model. Every answer cites its source passages, and the tool abstains when it cannot. One Python file, standard library only.
+- [affordable-housing-finance](https://github.com/marcpoliquin5/affordable-housing-finance): breaks down the published financing for two Miami-Dade affordable housing developments by stage, and re-checks every figure against its source page.
 
-| Repository | What it is |
-|---|---|
-| [**handbook-answerer**](https://github.com/marcpoliquin5/handbook-answerer) | Retrieval-augmented answers from a live public handbook using a local model, with citations and explicit abstention |
-| [**affordable-housing-finance**](https://github.com/marcpoliquin5/affordable-housing-finance) | Sourced review of published affordable-housing financing that keeps construction and permanent financing stages separate, with live source verification |
+## How the projects are kept accurate
+
+Each repository states what is measured, what is simulated, and what is not done yet. Results come with the commands that produced them, and reference material cites its sources.
